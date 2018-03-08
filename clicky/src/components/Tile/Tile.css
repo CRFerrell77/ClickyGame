@@ -1,0 +1,27 @@
+body {
+    background-image: url("https://assets.infinitythegame.net/downloads/wallpapers/169/n3cover.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.tile {
+    display: inline-block;
+    background-color: rgb(144, 144, 144);
+    padding: 5px;
+    margin: 5px 40px;
+}
+
+.tile img {
+    height: 150px;
+    width: 150px;
+}
+
+.shadow {
+    -webkit-box-shadow: 0 10px 6px -6px #444444;
+    -moz-box-shaddow: 0 10px 6px -6px #444444;
+    box-shadow: 0 10px 6px -6px #444444;  
+}

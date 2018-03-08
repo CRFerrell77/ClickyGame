@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "name": "Aleph",
+        "img": "/images/ALEPH.png"
+    },
+    {
+        "id": 2,
+        "name": "Ariadna",
+        "img" : "/images/Ariadna.png"
+
+    },
+    {
+        "id": 3,
+        "name": "Druze",
+        "img": "/images/druze.png"
+    },
+    {
+        "id": 4,
+        "name":"GIL",
+        "img": "/images/GIL.png"
+    },
+    {
+        "id": 5,
+        "name":"tiger",
+        "img": "/images/tiger.png"
+    },
+    {
+        "id": 6,
+        "name":"Corre",
+        "img": "/images/corre.png"
+    },
+    {
+        "id": 7,
+        "name":"Haqq",
+        "img": "/images/Haqq.png"
+    },
+    {
+        "id": 8,
+        "name":"combine",
+        "img": "/images/combine.png"
+    },
+    {
+        "id": 9,
+        "name":"Nomads",
+        "img": "/images/Nomads.png"
+    },
+    {
+        "id": 10,
+        "name":"PanO",
+        "img": "/images/PanOceania.png"
+    },
+    {
+        "id": 11,
+        "name":"Tohaa",
+        "img": "/images/Tohaa.png"
+    },
+    {
+        "id": 12,
+        "name":"YuJing",
+        "img": "/images/YuJing.png"
+    }
+]
+  
