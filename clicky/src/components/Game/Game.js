@@ -1,36 +1,51 @@
 import React from "react";
 import Tile from "../Tile";
-import Popup from "../Popup";
 import images from "../../images.json";
-import "./Board.css";
+import "./Game.css";
 
-function shuffleArray(array) {
+function shuffleArr(array) {
 
-    let currentIndex = array.length;
+    let currIndex = array.length;
     let tempValue;
-    let randomIndex;
+    let rndIndex;
 
-    while(currentIndex !== 0){
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1
+    while(currIndex !== 0){
+        rndIndex = Math.floor(Math.random() * currIndex);
+        currIndex -= 1
 
-        tempValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = tempValue;
+        tempValue = array[currIndex];
+        array[currIndex] = array[rndIndex];
+        array[rndIndex] = tempValue;
     }
 
     return array
 }
 
-class Board extends React.Component {
+class Game extends React.Component {
 
     state = {
-        images: shuffleArray(images),
+        images: shuffleArr(images),
         clicked: [],
         score: 0,
         highScore: 0,
-        gameState: null
+        gameState: null,
+        message: "Game in Progress"
     };
+
+    checkWL = (ending)=> {
+        let newMsg = this.state
+
+        if (ending === "lost") {
+            newMsg.message = "You have lost this game";
+            this.setState(newMsg);
+            console.log(this.state);
+        } else if (ending === "won") {
+            newMsg.message = "You have won this game";
+            this.setState(newMsg);
+            console.log(this.state);
+        } else {}
+
+    }
 
     tileClickHandler = (id) => {
 
@@ -42,10 +57,11 @@ class Board extends React.Component {
 
         if(newState.clicked.includes(id)){
             newState.gameState = "lost";
+            this.checkWL("lost")
         } 
         else {
             newState.clicked.push(id);
-            newState.images = shuffleArray(this.state.images);
+            newState.images = shuffleArr(this.state.images);
             newState.score ++;
             if(newState.score > newState.highScore){
                 newState.highScore = newState.score
@@ -62,7 +78,7 @@ class Board extends React.Component {
     newGame = () => {
         let newState = this.state
 
-        newState.images = shuffleArray(images);
+        newState.images = shuffleArr(images);
         newState.clicked = []
         newState.score = 0
         newState.gameState = null
@@ -78,17 +94,14 @@ class Board extends React.Component {
                 <div className="col col-xs-12 text-center">
                     <h4 className="centerB">Score: {this.state.score} <span className="spacer"> | </span> High Score: {this.state.highScore}</h4>
                 </div>
+                <div>
+                    <h2 className="centerB">{this.state.message}</h2>
+                </div>
             </div>
 
             {this.state.images.map(image => <Tile key={image.id} {...image} clickHandler={() => this.tileClickHandler(image.id)}/>)}
 
-            {this.state.gameState ? 
-            <Popup gameState={this.state.gameState} onClick={this.newGame}/>
-            :
-            null
-            }
-
         </div>
 }
 
-export default Board;
+export default Game;

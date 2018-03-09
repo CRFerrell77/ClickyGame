@@ -1,5 +1,5 @@
 import React from "react";
-import Board from "./components/Board";
+import Game from "./components/Game";
 import "./App.css";
 
 const App = () => 
@@ -12,7 +12,7 @@ const App = () =>
         
         
         <div className="row">
-            <Board />
+        <Game />
         </div>
     </div>
 
